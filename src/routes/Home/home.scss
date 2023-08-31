@@ -1,0 +1,214 @@
+@import "../../../styles/mixins/index.scss";
+
+.home-page-all-contnet-alignment {
+  padding: 60px 0 0 0;
+
+  @include breakpoint("sm-max") {
+    padding: 40px 0;
+  }
+  .title {
+    padding: 0 0 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      background-color: var(--theme-button-background-color);
+      border: none;
+      padding: 10px 24px;
+      color: #fff;
+      font-size: 16px;
+      letter-spacing: 1px;
+      font-weight: 600;
+      border-radius: 4px;
+      font-family: "Outfit", sans-serif;
+
+      @include breakpoint("sm-max") {
+        font-size: 14px;
+        padding: 8px 24px;
+      }
+    }
+    .all-button-alignment {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .relative-button {
+        position: relative;
+
+        .dropdwon {
+          position: absolute;
+          right: 0;
+          width: 80px;
+          background-color: #fff;
+          border-radius: 6px;
+          z-index: 9;
+
+          &.hide {
+            max-height: 0px;
+            overflow: hidden;
+            transition: 0.3s ease-in-out;
+          }
+
+          &.show {
+            max-height: 100vh;
+            overflow: hidden;
+            transition: 0.3s ease-in-out;
+          }
+
+          span:last-child {
+            border: none;
+          }
+
+          span {
+            font-size: 14px;
+            font-weight: 400;
+            display: block;
+            padding: 10px;
+            color: #000;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            border-bottom: 1px solid #e0e0e0;
+            &:hover {
+              transform: translate(0, -2px);
+              color: var(--theme-profile-background-color);
+              transition: 0.3s ease-in-out;
+            }
+          }
+        }
+
+        .profile-name {
+          width: 40px;
+          height: 40px;
+          background-color: var(--theme-button-background-color);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          border-radius: 50%;
+          font-size: 16px;
+          color: var(--theme-white-text-color);
+          text-transform: capitalize;
+        }
+      }
+    }
+    h1 {
+      font-size: 32px;
+      color: var(--theme-heading-text-color);
+      font-weight: 500;
+      letter-spacing: 1px;
+
+      @include breakpoint("sm-max") {
+        font-size: 24px;
+        line-height: 32px;
+      }
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    @include breakpoint("sm-max") {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    }
+
+    .drop-target {
+      background-color: #4d4f50 !important;
+    }
+    /* CSS for zoom-in and zoom-out animations */
+    .drop-target.zoom-in {
+      transform: scale(1.1); /* You can adjust the scale factor as needed */
+      transition: transform 0.3s ease;
+    }
+
+    .drop-target.zoom-out {
+      transform: scale(0.9); /* You can adjust the scale factor as needed */
+      transition: transform 0.3s ease;
+    }
+    .grid-items {
+      background-color: #161a1d;
+
+      border-radius: 4px;
+
+      &:hover {
+        background-color: #2d2f30;
+      }
+
+      .card-body {
+        padding: 0 14px 14px 14px;
+        height: calc(100vh - 225px);
+        overflow: auto;
+
+        @include breakpoint("sm-max") {
+          height: 450px;
+        }
+      }
+
+      .card-title {
+        padding: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .relative-button {
+          position: relative;
+
+          .dropdwon {
+            position: absolute;
+            right: 0;
+            width: 80px;
+            background-color: #fff;
+            border-radius: 6px;
+            z-index: 9;
+
+            &.hide {
+              max-height: 0px;
+              overflow: hidden;
+              transition: 0.3s ease-in-out;
+            }
+
+            &.show {
+              max-height: 100vh;
+              overflow: hidden;
+              transition: 0.3s ease-in-out;
+            }
+
+            span:last-child {
+              border: none;
+            }
+
+            span {
+              font-size: 14px;
+              font-weight: 400;
+              display: block;
+              padding: 10px;
+              color: #000;
+              cursor: pointer;
+              transition: 0.3s ease-in-out;
+              border-bottom: 1px solid #e0e0e0;
+              &:hover {
+                transform: translate(0, -2px);
+                color: var(--theme-profile-background-color);
+                transition: 0.3s ease-in-out;
+              }
+            }
+          }
+
+          .fa-filter {
+            display: block;
+            font-size: 14px;
+            color: var(--theme-sub-text-color);
+            line-height: 16px;
+          }
+        }
+        span {
+          display: block;
+          font-size: 14px;
+          color: var(--theme-sub-text-color);
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}

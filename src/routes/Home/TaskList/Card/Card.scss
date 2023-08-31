@@ -1,0 +1,129 @@
+.card {
+  background-color: var(--theme-card-background-color);
+  padding: 14px;
+  border-radius: 4px;
+  margin: 0 0 10px 0;
+  cursor: pointer;
+  .card-text-grid {
+    padding: 0 0 12px 0;
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    gap: 10px;
+
+    .relative-button {
+      position: relative;
+
+      .dropdwon {
+        position: absolute;
+        right: 0;
+        width: 80px;
+        background-color: #fff;
+        border-radius: 6px;
+        z-index: 9;
+
+        &.hide {
+          max-height: 0px;
+          overflow: hidden;
+          transition: 0.3s ease-in-out;
+        }
+
+        &.show {
+          max-height: 100vh;
+          overflow: hidden;
+          transition: 0.3s ease-in-out;
+        }
+
+        span:last-child {
+          border: none;
+        }
+
+        span {
+          font-size: 14px;
+          font-weight: 400;
+          display: block;
+          padding: 10px;
+          color: #000;
+          cursor: pointer;
+          transition: 0.3s ease-in-out;
+          border-bottom: 1px solid #e0e0e0;
+          &:hover {
+            transform: translate(0, -2px);
+            color: var(--theme-profile-background-color);
+            transition: 0.3s ease-in-out;
+          }
+        }
+      }
+
+      button {
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 24px;
+        background-color: var(--theme-profile-background-color);
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        font-family: "Outfit", sans-serif;
+        border-radius: 4px;
+        color: var(--theme-white-text-color);
+
+        i {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--theme-border-color);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--theme-icon-text-color);
+      font-size: 20px;
+    }
+  }
+  .card-sub-text {
+    p {
+      display: block;
+      font-size: 16px;
+      line-height: 25px;
+      color: #fff;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 22px;
+      color: #fff;
+      color: var(--theme-sub-text-color);
+      word-break: break-all;
+    }
+  }
+
+  .right-alignment {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    div {
+      width: 32px;
+      height: 32px;
+      background-color: var(--theme-profile-background-color);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: capitalize;
+    }
+  }
+}
